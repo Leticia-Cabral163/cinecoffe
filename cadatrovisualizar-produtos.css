@@ -1,0 +1,211 @@
+:root {       /* Paleta de Cores*/
+    --cafe-principal: #4A3528;      
+    --cinema-destaque: #8C1A1A;    
+    --acento-ouro: #CC9900;       
+    --fundo-claro: #EAE0D3;        
+    --texto-escuro: #1F1F1F;      
+    --borda-clara: #D4C9BD;        
+}
+
+body {
+    display: flex; 
+    min-height: 100vh; 
+    margin: 0;
+    padding: 0; 
+    font-family: Arial, sans-serif;
+    background-color: var(--cafe-principal); /* assim aparece a cor da paleta*/
+    color: var(--fundo-claro); 
+}
+
+/* BARRA LATERAL*/
+.sidebar {
+    width: 250px;
+    background-color: var(--cafe-principal); 
+    color: var(--fundo-claro);
+    padding: 20px 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.4);  
+    /* flex-grow: Define a capacidade de um item flexível crescer (tomar espaço extra) 
+    em relação aos outros itens flexíveis dentro do contêiner. */
+}
+
+.sidebar-profile { /* parte do perfil*/
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--borda-clara);
+    margin-bottom: 20px;
+}
+
+.profile-img { /* foto de perfil*/
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.logout-btn { /* sair no campo*/
+    color: #DC6F6F; 
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+/* NAVEGAÇÃO DO SIDEBAR */
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-nav li a {
+    display: block;
+    padding: 10px 20px;
+    color: var(--fundo-claro);
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.sidebar-nav li a:hover, .sidebar-nav li.active a {
+    background-color: hsl(25, 20%, 45%);
+    color: white; 
+}
+
+/* CONTEÚDO PRINCIPAL */
+.content-container {
+    flex-grow: 1; /* Ocupa todo o espaço restante */
+    padding: 20px; 
+    background-color: var(--fundo-claro); 
+    color: var(--texto-escuro); 
+}
+
+.main-header { /* título*/
+    margin-bottom: 20px;
+    color: var(--texto-escuro); 
+}
+
+/* Título */
+.titulo-cadastro {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--cinema-destaque); 
+    border-bottom: 2px solid var(--borda-clara);
+    padding-bottom: 8px;
+    margin-bottom: 0; 
+}
+
+/* --- Layout do Formulário  --- */
+.formulario {
+    padding: 15px;
+    background-color:hwb(60 98% 2%) ;
+  
+}
+.form {
+     background-color:hwb(60 98% 2%) ;
+}
+
+/* Linha 1 do form */
+.l1, .form-row {
+    display: flex;
+    gap: 15px;
+    /* gap : Define o espaçamento  entre as linhas e colunas de itens dentro de um contêiner flexível ou de grid.*/
+    margin-bottom: 15px;
+}
+
+.l2, .form-row {
+    display: flex;
+    gap: 15px;
+    /* gap : Define o espaçamento  entre as linhas e colunas de itens dentro de um contêiner flexível ou de grid.*/
+    margin-bottom: 15px;
+}
+
+/* Contêiner 2 */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0;
+    flex-grow: 1; /* Garante que os grupos se ajustem */
+}
+.col-full { /* campo grande*/
+    flex-basis: 100%;  
+    /* flex-basis: Define o tamanho inicial padrão de um item flexível antes que o espaço restante seja ocupado.
+     Se não for definido, o valor é baseado no conteúdo do item. */
+    flex-grow: 1;
+}
+
+.col-small {  /* campo médio*/
+    flex-basis: 160px; 
+    flex-grow: 1;
+}
+
+.col-medium {  /* campo pequeno */
+    flex-basis: 250px; 
+    flex-grow: 2;
+}
+
+/* Campo Largo */
+.col-large {
+    flex-grow: 3;
+}
+
+/* : Campo MÍNIMO  */
+.col-min {
+    flex-basis: 90px;
+    flex-grow: 0;
+}
+
+.pequeno-div {
+    flex-basis: 160px;
+    flex-grow: 0;
+}
+
+input[type="submit"] { /* BOTÃO PRINCIPAL DE CADASTRO*/
+    background-color: var(--acento-ouro);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s;
+
+}
+
+input[type="submit"]:hover {
+    background-color: #A37A00;
+}
+
+.message-alert { /* mensagem alerta*/
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    border: 1px solid transparent;
+}
+
+.alert-success {
+    /* mensagem de sucesso */
+    background-color: #E6FFE6; 
+    color: #3C763D; 
+    border-color: #D6E9C6;
+}
+
+.alert-error {
+    /* mensagem de erro */
+    background-color: #FFE6E6; 
+    color: #A94442; 
+    border-color: #EBCCD1;
+}
+
+/* Estilo para o botão de Cancelar na área de Ações do formulário */
+.cancel-btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid var(--borda-clara); 
+    border-radius: 8px;
+    color: var(--texto-escuro); 
+    background-color: #f5f5f5;
+    margin-left: 10px;
+    display: inline-block;
+}
+.cancel-btn:hover {
+    background-color: #e8e8e8;
+}

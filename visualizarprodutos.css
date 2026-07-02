@@ -1,0 +1,210 @@
+:root {
+    --cafe-principal: #4A3528;     
+    --cinema-destaque: #8C1A1A;  
+    --acento-ouro: #CC9900;        
+    --fundo-claro: #EAE0D3;       
+    --texto-escuro: #1F1F1F;       
+    --borda-clara: #D4C9BD;    
+}
+
+body {
+    display: flex;
+    min-height: 100vh; 
+    margin: 0;
+    padding: 0; 
+    font-family: Arial, sans-serif;
+    background-color: var(--cafe-principal); 
+    color: var(--fundo-claro);  
+}
+
+/* BARRA LATERAL*/
+.sidebar {
+    width: 250px; 
+    background-color: var(--cafe-principal); 
+    color: var(--fundo-claro);
+    padding: 20px 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.4);
+}
+
+.sidebar-profile{ /* PARTE DE PERFIL*/
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--borda-clara);
+    margin-bottom: 20px;
+}
+
+.profile-img { /* IMG PERFIL*/
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.logout-btn { /* SAR*/
+    color: #DC6F6F; 
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+/* Navegação Sidebar */
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-nav li a {
+    display: block;
+    padding: 10px 20px;
+    color: var(--fundo-claro);
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.sidebar-nav li a:hover, .sidebar-nav li.active a {
+    background-color: var(--cinema-destaque);
+    color: white; 
+}
+
+/* CONTEÚDO PRINCIPAL */
+.content-container {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: var(--fundo-claro); 
+    color: var(--texto-escuro); 
+    overflow-y: auto; 
+    height: 100vh; 
+}
+
+.main-header {
+    margin-bottom: 20px;
+    color: var(--texto-escuro); 
+}
+
+/* Título de Seção (Usado no Cadastro e Visualização) */
+.titulo-cadastro {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--cinema-destaque); 
+    border-bottom: 2px solid var(--borda-clara);
+    padding-bottom: 8px;
+    margin-bottom: 0; 
+}
+
+
+.formulario {  /* FORMULARIO */
+    padding: 15px;
+    background-color:hwb(60 98% 2%) ;
+  
+}
+
+.area-cadastro {
+    max-width: 900px;
+    margin-left: auto; 
+    margin-right: auto;
+    background-color: white; 
+    padding: 30px;
+    border-radius: 12px; 
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); 
+    border: 1px solid var(--borda-clara);
+}
+
+.l1, .form-row { /* LINHA 1 DO FORMULARIO */
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.form-group {  
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0;
+    flex-grow: 1;
+}
+/* CAMPOS E TAMANHOA*/
+.col-full { flex-basis: 100%; flex-grow: 1; }
+.col-small { flex-basis: 160px; flex-grow: 1; }
+.col-medium { flex-basis: 250px; flex-grow: 2; }
+.col-large { flex-grow: 3; }
+.col-min { flex-basis: 90px; flex-grow: 0; }
+
+input[type="text"],
+select {
+    padding: 8px 10px;
+    border: 1px solid var(--borda-clara); 
+    border-radius: 8px;
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box;
+    color: var(--texto-escuro); 
+}
+
+
+input[name*="precouni"],
+input[name*="custo"],
+input[name*="liquido"] {
+    background-color: #FFFBE6;
+    border: 1px solid var(--acento-ouro);
+}
+
+/* Botão de Ação */
+.form-actions {
+    margin-top: 30px;
+    text-align: right;
+    border-top: 1px solid var(--borda-clara); 
+    padding-top: 15px;
+}
+input[type="submit"] {
+    background-color: var(--acento-ouro); 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+input[type="submit"]:hover {
+    background-color: #A37A00; 
+}
+
+
+/* Container que envolve a tabela */
+.listagem-produtos {
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+.table-container {
+    overflow-x: auto; 
+    padding: 10px;
+    background-color: white; 
+    border-radius: 12px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--borda-clara); /* Mantendo a borda do .area-cadastro */
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+/* Cabeçalho da Tabela */
+.data-table thead th {
+    background-color: var(--cinema-destaque); 
+    color: white;
+    font-weight: bold;
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 3px solid var(--acento-ouro); 
+}
+
+/* Linhas do Corpo */
+.data-table tbody td {
+    padding: 10px 15px;
+    border-bottom: 1px solid var(--borda-clara);
+    color: var(--texto-escuro);
+    text-align: left; 
+}
